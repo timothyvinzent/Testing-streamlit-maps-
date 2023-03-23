@@ -25,6 +25,10 @@ if not location:
 
     location_input = strasse + nummer + plz 
 
+tab1, tab2 = st.tabs(["Trash collector", "Too good to Throw"])
+
+with tab1:
+
 
 #st.header("Laden Sie Bitte ein Foto des Sperrguts hoch:")
 #picture = st.camera_input("Take a picture")
@@ -72,54 +76,58 @@ if not location:
 #     files={'image': open(image_path, 'rb')})
 # print(response.json())
 
-st.header("Bitte geben Sie uns noch zusätzliche Angaben zu dem Sperrgut:")
+    st.header("Bitte geben Sie uns noch zusätzliche Angaben zu dem Sperrgut:")
 
-gewicht = st.radio(
-    "Ist das Objekt schwerer als 30kg?",
-    ('Ja', "Nein"))
+    gewicht = st.radio(
+        "Ist das Objekt schwerer als 30kg?",
+        ('Ja', "Nein"))
 
-if gewicht == "Ja":
-    gewicht = 1
-else: 
-    gewicht = 1
+    if gewicht == "Ja":
+        gewicht = 1
+    else: 
+        gewicht = 1
 
-länge = st.radio(
-    "Ist das mehr als zwei Meter lang?",
-    ('Ja', "Nein"))
+    länge = st.radio(
+        "Ist das mehr als zwei Meter lang?",
+        ('Ja', "Nein"))
 
-if länge == "Ja":
-    länge = 1
-else:
-    länge = 0
+    if länge == "Ja":
+        länge = 1
+    else:
+        länge = 0
 
-breite = st.radio(
-    "Ist das mehr als 90 cm Breit?",
-    ('Ja', "Nein"))
+    breite = st.radio(
+        "Ist das mehr als 90 cm Breit?",
+        ('Ja', "Nein"))
 
-if breite == "Ja":
-    breite = 1
-else: 
-    breite = 0
+    if breite == "Ja":
+        breite = 1
+    else: 
+        breite = 0
 
-höhe = st.radio(
-    "Ist das mehr als 40 cm Hoch?",
-    ('Ja', "Nein"))
+    höhe = st.radio(
+        "Ist das mehr als 40 cm Hoch?",
+        ('Ja', "Nein"))
 
-if höhe == "Ja":
-    höhe = 1
-else: 
-    höhe = 0
+    if höhe == "Ja":
+        höhe = 1
+    else: 
+        höhe = 0
 
 
-submit_button = st.button("Absenden")
+    submit_button = st.button("Absenden")
 
-if submit_button:
 
-    total = gewicht + länge + breite + höhe
 
-    kostenvorschlag = 20
 
-    st.write("Der Kostenvorschlag für dieses Objekt ist {}".format(kostenvorschlag))
+    if submit_button:
+
+        total = gewicht + länge + breite + höhe
+
+        kostenvorschlag = 20
+
+        st.write("Der Kostenvorschlag für dieses Objekt ist {}".format(kostenvorschlag))
+
 
 # Returns user's location after asking for permission when the user clicks the generated link with the given text
 
