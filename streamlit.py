@@ -16,9 +16,9 @@ import pandas as pd
 import plotly.graph_objects as go
 
 
-@st.cache(allow_output_mutation=True)
+@st.cache_data
 def load_data():
-    data = pd.read_csv('samelstellen.csv', index_col='Gemeindename')
+    data = pd.read_csv('sammelstellen.csv', sep= ";")
     return data
 
 samstelstellen = load_data()
@@ -48,6 +48,7 @@ if not location:
     plz = st.text_input("Postleitzahl")
 
     location_input = strasse + nummer + plz 
+#st.header("Ihre Adresse lautet: {}".format(location))
 
 tab1, tab2 = st.tabs(["Trash collector", "Too good to Throw"])
 
@@ -178,8 +179,8 @@ with tab2:
         hovermode='closest',
         mapbox_style = "open-street-map",
         mapbox=dict(
-        center = go.layout.mapbox.Center(lat = 47.4245,
-        lon = 9.3767), zoom = 13)),
+        center = go.layout.mapbox.Center(lat = location['coords']['latitude'],
+        lon = location['coords']['longitude']), zoom = 13)),
 
 
-    fig.show()
+    #st.plotly_chart(fig, use_container_width=True)
