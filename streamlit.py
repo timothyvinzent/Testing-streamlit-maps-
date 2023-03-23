@@ -173,13 +173,18 @@ with tab2:
     fig = go.Figure(go.Scattermapbox(
         lat= [47.4335382954281, 47.41847764687886],
         lon= [9.383928186686626, 9.36442953556214],
-        mode='markers',
+        mode='markers+text+lines',
         marker=go.scattermapbox.Marker(
             size=15
         ),
-        text= ["You", "Recycling center"],
+        text= ["You", "Recycling center"], textposition="bottom center",
     ))
-
+#mode='markers+text+lines',
+#       marker=go.scattermapbox.Marker(
+#           size=15
+#        ),
+#        text= ["You", "Recycling center"],
+#    ))
     fig.update_layout(
         autosize=True,
         hovermode='closest',
