@@ -170,7 +170,7 @@ with tab2:
     lon = location['coords']['longitude']
     lat = location['coords']['latitude']
 
-    st.header("Your location is: {lon}, {lat}")
+    st.header(f"Your location is: {lon}, {lat}")
 
 
 
