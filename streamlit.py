@@ -55,6 +55,8 @@ tab1, tab2, tab3= st.tabs(["Trash collector", "Recycling near you", "Too good to
 
 with tab1:
 
+    location = get_geolocation()
+    print(location)
 
 #st.header("Laden Sie Bitte ein Foto des Sperrguts hoch:")
 #picture = st.camera_input("Take a picture")
@@ -167,6 +169,7 @@ with tab2:
 
 
     st.header("Here you can find the nearest recycling center to you")
+    
     st.write(location)
     lon = location['coords']['longitude']
     lat = location['coords']['latitude']
