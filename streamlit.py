@@ -26,26 +26,26 @@ if not location:
     location_input = strasse + nummer + plz 
 
 
-st.header("Laden Sie Bitte ein Foto des Sperrguts hoch:")
-picture = st.camera_input("Take a picture")
+#st.header("Laden Sie Bitte ein Foto des Sperrguts hoch:")
+#picture = st.camera_input("Take a picture")
 
-if picture:
-    test = Image.open(picture)
-    width, height = test.size  # width is needed for image_to_url()
-    if width > MAXIMUM_CONTENT_WIDTH:
-        width = MAXIMUM_CONTENT_WIDTH  # width is capped at 2*730 https://github.com/streamlit/streamlit/blob/949d97f37bde0948b57a0f4cab7644b61166f98d/lib/streamlit/elements/image.py#L39
-    #st.image(picture)
+#if picture:
+#    test = Image.open(picture)
+#    width, height = test.size  # width is needed for image_to_url()
+#    if width > MAXIMUM_CONTENT_WIDTH:
+#        width = MAXIMUM_CONTENT_WIDTH  # width is capped at 2*730 https://github.com/streamlit/streamlit/blob/949d97f37bde0948b57a0f4cab7644b61166f98d/lib/streamlit/elements/image.py#L39
+#    #st.image(picture)
 
-st.write(
-        image_to_url(
-            image=picture,
-            width=width,
-            clamp=False,
-            channels="RGB",
-            output_format=picture.type,
-            image_id=picture.id,  # each uploaded file has a file.id
-        )
-    ) # each uploaded file has a file.id)
+#st.write(
+#        image_to_url(
+#            image=picture,
+#            width=width,
+#            clamp=False,
+#            channels="RGB",
+#            output_format=picture.type,
+#            image_id=picture.id,  # each uploaded file has a file.id
+#        )
+#    ) # each uploaded file has a file.id)
 
 # part_url = image_to_url(
 #             image=picture,
