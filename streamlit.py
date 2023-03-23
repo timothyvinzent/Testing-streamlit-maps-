@@ -50,7 +50,7 @@ if not location:
     location_input = strasse + nummer + plz 
 #st.header("Ihre Adresse lautet: {}".format(location))
 
-tab1, tab2 = st.tabs(["Trash collector", "Too good to Throw"])
+tab1, tab2, tab3= st.tabs(["Trash collector", "Recycling near you", "Too good to Throw"])
 
 with tab1:
 
