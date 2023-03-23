@@ -11,10 +11,34 @@ import io
 import streamlit as st
 from streamlit.elements.image import image_to_url, MAXIMUM_CONTENT_WIDTH
 from PIL import Image
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+
+
+@st.cache(allow_output_mutation=True)
+def load_data():
+    data = pd.read_csv('samelstellen.csv', index_col='Gemeindename')
+    return data
+
+samstelstellen = load_data()
+
 
 st.title("Wilkommen bei der Sperrgutentsorgung St. Gallen")
 
 location = get_geolocation()
+latitudes = []
+longitudes = []
+names = []
+
+for i in range(0, len(samstelstellen)):
+    newStrings = samstelstellen["Geo Point"][i].split(",")
+    
+    latitudes.append(newStrings[0])
+    longitudes.append(newStrings[1])
+    names.append(samstelstellen["Standort"][i])
+
+
 
 if not location:
 
@@ -133,3 +157,29 @@ with tab1:
 
 # The URL parts of the page
 #location_json = get_page_location()
+
+with tab2:
+    st.header("Here you can find the nearest recycling center to you")
+
+
+
+    fig = go.Figure(go.Scattermapbox(
+        lat= latitudes,
+        lon= longitudes,
+        mode='markers',
+        marker=go.scattermapbox.Marker(
+            size=9
+        ),
+        text= names,
+    ))
+
+    fig.update_layout(
+        autosize=True,
+        hovermode='closest',
+        mapbox_style = "open-street-map",
+        mapbox=dict(
+        center = go.layout.mapbox.Center(lat = 47.4245,
+        lon = 9.3767), zoom = 13)),
+
+
+    fig.show()
