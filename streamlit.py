@@ -186,7 +186,8 @@ fig.update_layout(
     hovermode='closest',
     mapbox_style="open-street-map",
     mapbox=dict(
-        center=go.layout.mapbox.Center(lat=lat, lon=lon),
+        center=go.layout.mapbox.Center(lat = location['coords']['latitude'],
+        lon = location['coords']['longitude']),
         zoom=14
     )
 )
