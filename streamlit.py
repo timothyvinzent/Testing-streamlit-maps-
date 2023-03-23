@@ -175,7 +175,7 @@ with tab2:
         lon= [9.383928186686626, 9.36442953556214],
         mode='markers+text+lines',
         marker=go.scattermapbox.Marker(
-            size=15
+            size=15, color = ["red", "green"]
         ),
         text= ["You", "Recycling center"], textposition="bottom center",
     ))
@@ -191,7 +191,7 @@ with tab2:
         mapbox_style = "open-street-map",
         mapbox=dict(
         center = go.layout.mapbox.Center(lat = location['coords']['latitude'],
-        lon = location['coords']['longitude']), zoom = 13)),
+        lon = location['coords']['longitude']), zoom = 14)),
 
 
     #st.plotly_chart(fig, use_container_width=True)
