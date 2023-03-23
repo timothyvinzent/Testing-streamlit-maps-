@@ -101,7 +101,7 @@ with tab1:
 #     files={'image': open(image_path, 'rb')})
 # print(response.json())
     location = get_geolocation()
-    
+
     st.header("Bitte geben Sie uns noch zusätzliche Angaben zu dem Sperrgut:")
 
     gewicht = st.radio(
@@ -168,7 +168,7 @@ with tab2:
 
     st.header("Here you can find the nearest recycling center to you")
     
-    st.write(location)
+    st.write(type(location))
     lon = location['coords']['longitude']
     lat = location['coords']['latitude']
 
