@@ -12,7 +12,7 @@ import streamlit as st
 from streamlit.elements.image import image_to_url, MAXIMUM_CONTENT_WIDTH
 from PIL import Image
 import pandas as pd
-import plotly.express as px
+#import plotly.express as px
 import plotly.graph_objects as go
 
 
