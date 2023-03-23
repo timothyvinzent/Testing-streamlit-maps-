@@ -175,7 +175,7 @@ with tab2:
         lon= [9.383928186686626, 9.36442953556214],
         mode='markers+text+lines',
         marker=go.scattermapbox.Marker(
-            size=15, color = ["red", "green"]
+            size=15, color = ["red", "green"], symbol= ["cricket", "recycling"]
         ),
         text= ["You", "Recycling center"], textposition="bottom center",
     ))
