@@ -27,6 +27,7 @@ samstelstellen = load_data()
 st.title("Wilkommen bei der Sperrgutentsorgung St. Gallen")
 
 location = get_geolocation()
+print(location)
 latitudes = []
 longitudes = []
 names = []
