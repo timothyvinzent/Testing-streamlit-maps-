@@ -160,19 +160,24 @@ with tab1:
 #location_json = get_page_location()
 
 with tab2:
+    # location values hardcoded lat = 47.4335382954281
+    # lon = 9.383928186686626
+    # recycling center = 47.41847764687886, 9.36442953556214
+
+
     st.header("Here you can find the nearest recycling center to you")
     st.header("Your location is: {}".format(location))
 
 
 
     fig = go.Figure(go.Scattermapbox(
-        lat= latitudes,
-        lon= longitudes,
+        lat= [47.4335382954281, 47.41847764687886],
+        lon= [9.383928186686626, 9.36442953556214],
         mode='markers',
         marker=go.scattermapbox.Marker(
             size=15
         ),
-        text= names,
+        text= ["You", "Recycling center"],
     ))
 
     fig.update_layout(
