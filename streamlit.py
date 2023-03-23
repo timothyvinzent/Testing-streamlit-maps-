@@ -167,7 +167,10 @@ with tab2:
 
 
     st.header("Here you can find the nearest recycling center to you")
-    st.header("Your location is: {}".format(location))
+    lon = location['coords']['longitude']
+    lat = location['coords']['latitude']
+
+    st.header("Your location is: {lon}, {lat}")
 
 
 
