@@ -180,26 +180,26 @@ with tab2:
 
 
 
-    fig = go.Figure(go.Scattermapbox(
-        lat=[47.4335382954281, 47.41847764687886],
-        lon=[9.383928186686626, 9.36442953556214],
-        mode='markers',
-        marker={'size': 20, 'symbol': ["bus", "harbor", "airport"],
-                'color': ['red', 'green']},
-        text=["You", "Recycling center"],
-    ))
+        fig = go.Figure(go.Scattermapbox(
+            lat=[47.4335382954281, 47.41847764687886],
+            lon=[9.383928186686626, 9.36442953556214],
+            mode='markers',
+            marker={'size': 20, 'symbol': ["bus", "harbor", "airport"],
+                    'color': ['red', 'green']},
+            text=["You", "Recycling center"],
+        ))
 
 
-    fig.update_layout(
-        autosize=True,
-        hovermode='closest',
-        mapbox_style="open-street-map")#,
-#        mapbox=dict(
-#            center=go.layout.mapbox.Center(lat = location['coords']['latitude'],
-#            lon = location['coords']['longitude']),
-#            zoom=14
-#        )
-#    )
+        fig.update_layout(
+            autosize=True,
+            hovermode='closest',
+            mapbox_style="open-street-map"),
+        mapbox=dict(
+            center=go.layout.mapbox.Center(lat = location['coords']['latitude'],
+            lon = location['coords']['longitude']),
+            zoom=14
+           )
+            
 
 
 
