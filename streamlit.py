@@ -189,7 +189,7 @@ with tab2:
         mapbox_style = "open-street-map",
         mapbox=dict(
         center = go.layout.mapbox.Center(lat = location['coords']['latitude'],
-        lon = location['coords']['longitude']), zoom = 14))
+        lon = location['coords']['longitude']), zoom = 14)),
 
 
     #st.plotly_chart(fig, use_container_width=True)
