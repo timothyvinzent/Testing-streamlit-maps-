@@ -170,12 +170,7 @@ with tab2:
 
 
 
-if location is not None:
-    lat = location['coords']['latitude']
-    lon = location['coords']['longitude']
-else:
-    lat = 47.4335382954281  # Set default latitude
-    lon = 9.383928186686626   # Set default longitude
+
 
 fig = go.Figure(go.Scattermapbox(
     lat=[47.4335382954281, 47.41847764687886],
