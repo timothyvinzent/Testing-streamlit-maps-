@@ -24,40 +24,37 @@ def load_data():
 samstelstellen = load_data()
 
 
-st.title("Wilkommen bei der Sperrgutentsorgung St. Gallen")
+# st.title("Wilkommen bei der Sperrgutentsorgung St. Gallen")
 
-location = get_geolocation()
-print(location)
-latitudes = []
-longitudes = []
-names = []
+# location = get_geolocation()
+# print(location)
+# latitudes = []
+# longitudes = []
+# names = []
 
-for i in range(0, len(samstelstellen)):
-    newStrings = samstelstellen["Geo Point"][i].split(",")
+# for i in range(0, len(samstelstellen)):
+#     newStrings = samstelstellen["Geo Point"][i].split(",")
     
-    latitudes.append(newStrings[0])
-    longitudes.append(newStrings[1])
-    names.append(samstelstellen["Standort"][i])
+#     latitudes.append(newStrings[0])
+#     longitudes.append(newStrings[1])
+#     names.append(samstelstellen["Standort"][i])
 
 
 
-if not location:
+# if not location:
 
-    st.header("Bitte geben Sie uns folgende Angaben:")
-    strasse = st.text_input("Strasse")
-    nummer = st.text_input("Nummer")
-    plz = st.text_input("Postleitzahl")
+#     st.header("Bitte geben Sie uns folgende Angaben:")
+#     strasse = st.text_input("Strasse")
+#     nummer = st.text_input("Nummer")
+#     plz = st.text_input("Postleitzahl")
 
-    location_input = strasse + nummer + plz 
+#     location_input = strasse + nummer + plz 
 #st.header("Ihre Adresse lautet: {}".format(location))
 
 tab1, tab2, tab3= st.tabs(["Trash collector", "Recycling near you", "Too good to Throw"])
 
 with tab1:
-
-    location = get_geolocation()
-    print(location)
-
+    
 #st.header("Laden Sie Bitte ein Foto des Sperrguts hoch:")
 #picture = st.camera_input("Take a picture")
 
@@ -103,7 +100,8 @@ with tab1:
 #     auth=(api_key, api_secret),
 #     files={'image': open(image_path, 'rb')})
 # print(response.json())
-
+    location = get_geolocation()
+    
     st.header("Bitte geben Sie uns noch zusätzliche Angaben zu dem Sperrgut:")
 
     gewicht = st.radio(
