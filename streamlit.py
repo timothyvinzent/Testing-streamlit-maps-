@@ -184,8 +184,9 @@ with tab2:
             lat=[47.4335382954281, 47.41847764687886],
             lon=[9.383928186686626, 9.36442953556214],
             mode='markers',
-            marker={'size': 20, 'symbol': ["bus", "harbor", "airport"],
-                    'color': ['red', 'green']},
+            marker=go.scattermapbox.Marker(
+            size=13, color=["red", "green"], 
+            ),
             text=["You", "Recycling center"],
         ))
 
@@ -200,7 +201,7 @@ with tab2:
             zoom=14
         ))
             
-
+        st.plotly_chart(fig, use_container_width=True)
 
 
 
