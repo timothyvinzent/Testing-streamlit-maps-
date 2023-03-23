@@ -170,26 +170,29 @@ with tab2:
 
 
 
-    fig = go.Figure(go.Scattermapbox(
-        lat= [47.4335382954281, 47.41847764687886],
-        lon= [9.383928186686626, 9.36442953556214],
-        mode='markers+text+lines',
-        marker = {'size': 20, 'symbol': ["bus", "harbor", "airport"]},
-        text= ["You", "Recycling center"], textposition="bottom center"
-    ))
-#mode='markers+text+lines',
-#       marker=go.scattermapbox.Marker(
-#           size=15
-#        ),
-#        text= ["You", "Recycling center"],
-#    ))
-    fig.update_layout(
-        autosize=True,
-        hovermode='closest',
-        mapbox_style = "open-street-map",
-        mapbox=dict(
-        center = go.layout.mapbox.Center(lat = location['coords']['latitude'],
-        lon = location['coords']['longitude']), zoom = 14)),
+fig = go.Figure(go.Scattermapbox(
+    lat= [47.4335382954281, 47.41847764687886],
+    lon= [9.383928186686626, 9.36442953556214],
+    mode='markers',
+    marker = {'size': 20, 'symbol': ["bus", "harbor", "airport"],
+              'color': ['red', 'green']},
+    text= ["You", "Recycling center"],
+))
+
+fig.update_layout(
+    autosize=True,
+    hovermode='closest',
+    mapbox_style = "open-street-map",
+    mapbox=dict(
+        center = go.layout.mapbox.Center(
+            lat = location['coords']['latitude'],
+            lon = location['coords']['longitude']
+        ), 
+        zoom = 14
+    )
+)
 
 
-    #st.plotly_chart(fig, use_container_width=True)
+
+
+
