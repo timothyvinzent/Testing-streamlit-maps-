@@ -169,10 +169,12 @@ with tab2:
     st.header("Here you can find the nearest recycling center to you")
     
     st.write(type(location))
-    lon = location['coords']['longitude']
-    lat = location['coords']['latitude']
 
-    st.header(f"Your location is: {lon}, {lat}")
+    if location:
+        lon = location['coords']['longitude']
+        lat = location['coords']['latitude']
+
+        st.header(f"Your location is: {lon}, {lat}")
 
 
 
