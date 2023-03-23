@@ -174,10 +174,8 @@ with tab2:
         lat= [47.4335382954281, 47.41847764687886],
         lon= [9.383928186686626, 9.36442953556214],
         mode='markers+text+lines',
-        marker=go.scattermapbox.Marker(
-            size=15, symbol= ["cricket", "recycling"]
-        ),
-        text= ["You", "Recycling center"], textposition="bottom center",
+        marker = {'size': 20, 'symbol': ["bus", "harbor", "airport"]},
+        text= ["You", "Recycling center"], textposition="bottom center"
     ))
 #mode='markers+text+lines',
 #       marker=go.scattermapbox.Marker(
