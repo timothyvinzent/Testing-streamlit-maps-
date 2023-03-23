@@ -170,7 +170,7 @@ with tab2:
         lon= longitudes,
         mode='markers',
         marker=go.scattermapbox.Marker(
-            size=9
+            size=15
         ),
         text= names,
     ))
