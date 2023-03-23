@@ -193,12 +193,12 @@ with tab2:
         fig.update_layout(
             autosize=True,
             hovermode='closest',
-            mapbox_style="open-street-map"),
-        mapbox=dict(
+            mapbox_style="open-street-map",
+            mapbox=dict(
             center=go.layout.mapbox.Center(lat = location['coords']['latitude'],
             lon = location['coords']['longitude']),
             zoom=14
-           )
+        ))
             
 
 
