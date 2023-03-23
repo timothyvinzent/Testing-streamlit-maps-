@@ -183,10 +183,12 @@ with tab2:
         fig = go.Figure(go.Scattermapbox(
             lat=[47.4335382954281, 47.41847764687886],
             lon=[9.383928186686626, 9.36442953556214],
-            mode='markers',
+            mode='markers+text',
             marker=go.scattermapbox.Marker(
-            size=13, color=["red", "green"], 
+            size=14, color=["red", "green"], 
             ),
+            textposition="bottom center",
+            textfont=dict(size=16, color="black"),
             text=["You", "Recycling center"],
         ))
 
